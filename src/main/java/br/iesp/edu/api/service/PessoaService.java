@@ -14,7 +14,17 @@ public class PessoaService {
     @Autowired
     private PessoaRepository repository;
 
+    public static String byteArrayToHexString(String pass) { // encrypt func
+        byte[] passBytes = pass.getBytes();
+        String newPass = "";
+        for (int i = 0; i < passBytes.length; i++) {
+            newPass += Integer.toString((passBytes[i] & 0xff) + 0x100, 16).substring(1);
+        }
+        return newPass;
+    }
+
     public Pessoa salvar(Pessoa pessoa){
+        pessoa.setSenha(byteArrayToHexString(pessoa.getSenha())); // encrypt
         return repository.save(pessoa);
     }
 
