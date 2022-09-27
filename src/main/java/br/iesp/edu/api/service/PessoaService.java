@@ -43,6 +43,10 @@ public class PessoaService {
         return repository.findAll();
     }
 
+    public List<Pessoa> listarPorNome(String nome){
+        return repository.findByNome(nome);
+    }
+
 
 
 
