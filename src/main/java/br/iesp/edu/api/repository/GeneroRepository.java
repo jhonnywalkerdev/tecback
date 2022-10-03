@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface GeneroRepository extends JpaRepository<Genero, Integer>{
-    List<Genero> FindByNome (String nome);
+    List<Genero> findByNome (String nome);
 }
 

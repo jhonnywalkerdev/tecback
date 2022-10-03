@@ -15,9 +15,6 @@ public class Genero {
     @Id
     @GeneratedValue
     private Long id;
-
     private String nome;
 
-    @ManyToOne
-    private Filme filme;
 }
