@@ -21,4 +21,7 @@ public class FormaPagamentoResource {
 
     @PostMapping
     void addFormaPag(@RequestBody FormaPagamento formaPagamento){formaPagamentoService.salvar(formaPagamento);}
+
+    @PutMapping
+    void alterarFormaPag(@RequestBody FormaPagamento formaPagamento) throws Exception {formaPagamentoService.atualizar(formaPagamento);}
 }
