@@ -43,4 +43,5 @@ public class FilmeService {
         return repository.findAll();
     }
 
+    public Filme listarPorId(int id){return repository.getReferenceById(id);}
 }

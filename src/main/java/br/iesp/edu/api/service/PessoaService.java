@@ -47,7 +47,7 @@ public class PessoaService {
         return repository.findByNome(nome);
     }
 
-
+    public Pessoa listarPorId(int id){return repository.getReferenceById(id);}
 
 
 }
