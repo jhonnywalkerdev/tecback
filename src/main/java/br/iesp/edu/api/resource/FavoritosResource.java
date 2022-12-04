@@ -19,20 +19,11 @@ public class FavoritosResource {
 
     @Autowired
     private FavoritosService service;
-    private PessoaService pService;
-    private FilmeService fService;
-    private SerieService sService;
+
 
     @PostMapping
-    public Favoritos salvar(@RequestBody int idPessoa, int idPrograma ){
-        Pessoa p = pService.listarPorId(idPessoa);
-        Filme f = fService.listarPorId(idPrograma);
-        Serie s = sService.listarPorId(idPrograma);
-        Favoritos favorito = new Favoritos();
-        favorito.setPessoaId(p);
-        favorito.setFilmeId(f);
-        favorito.setSerieId(s);
-        return service.salvar(favorito);
+    public Favoritos salvar( int idPessoa, int idPrograma ){
+        return service.salvar(idPessoa, idPrograma);
     }
 
     @DeleteMapping("/{id}")
@@ -40,9 +31,7 @@ public class FavoritosResource {
         service.excluirPorId(id);
     }
 
-    @GetMapping("/{pessoaId}")
-    public List<Favoritos> listarFavoritos(@PathVariable Long pessoaId){
-        return service.favoritosByPessoaId(pessoaId);
-    }
+    @GetMapping
+    public List<Favoritos> listarPorPessoaId(int id){return service.listarPorPessoaId(id);}
 
 }

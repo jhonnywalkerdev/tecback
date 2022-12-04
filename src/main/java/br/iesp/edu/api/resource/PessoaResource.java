@@ -28,4 +28,9 @@ public class PessoaResource {
         pessoaService.salvar(usuario);
     }
 
+    @GetMapping("/{nome}")
+    public List<Pessoa> getByNome(String nome){return pessoaService.listarPorNome(nome);}
+
+    @GetMapping("/{id}")
+    public Pessoa getByiD(int id){return pessoaService.listarPorId(id);}
 }

@@ -41,5 +41,5 @@ public class SerieService {
         return repository.findAll();
     }
 
-    public Serie listarPorId(int id){return repository.getReferenceById(id);}
+    public Serie listarPorId(int id){return repository.findById(id);}
 }

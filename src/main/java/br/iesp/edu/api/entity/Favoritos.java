@@ -1,9 +1,11 @@
 package br.iesp.edu.api.entity;
 
+import com.sun.istack.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 
 @Getter
 @Setter
@@ -15,11 +17,13 @@ public class Favoritos {
     private Long id;
 
     @ManyToOne
-    private Pessoa pessoaId;
+    private Pessoa pessoa;
 
+    @Nullable
     @ManyToOne
-    private Filme filmeId;
+    private Filme filme;
 
+    @Nullable
     @ManyToOne
-    private Serie serieId;
+    private Serie serie;
 }
