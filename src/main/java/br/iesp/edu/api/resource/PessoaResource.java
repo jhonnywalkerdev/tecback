@@ -10,13 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaResource {
-
-    private final PessoaService pessoaService;
-
     @Autowired
-    public PessoaResource(PessoaService pessoaService) {
-        this.pessoaService = pessoaService;
-    }
+    private PessoaService pessoaService;
 
     @GetMapping
     public List<Pessoa> getUsers() {
