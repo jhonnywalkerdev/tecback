@@ -10,4 +10,7 @@ import java.util.List;
 public interface PessoaRepository extends JpaRepository<Pessoa, Integer> {
 
     List<Pessoa> findByNome(String nome);
+    Pessoa findById(int id);
+
+
 }

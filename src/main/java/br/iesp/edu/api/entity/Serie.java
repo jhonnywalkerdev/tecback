@@ -3,9 +3,7 @@ package br.iesp.edu.api.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 
 @Entity
@@ -17,7 +15,9 @@ public class Serie {
     @GeneratedValue
     private Integer id;
     private String titulo;
-    private String genero;
+    @ManyToOne
+    @JoinColumn(name = "genero_id")
+    private Genero genero;
     private int ano;
     private int duracao;
     private int relevancia;

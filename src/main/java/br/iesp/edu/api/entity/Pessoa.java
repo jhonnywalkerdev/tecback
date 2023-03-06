@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -15,7 +13,7 @@ public class Pessoa {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     private String nome;
 

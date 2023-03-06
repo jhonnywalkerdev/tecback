@@ -10,13 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaResource {
-
-    private final PessoaService pessoaService;
-
     @Autowired
-    public PessoaResource(PessoaService pessoaService) {
-        this.pessoaService = pessoaService;
-    }
+    private PessoaService pessoaService;
 
     @GetMapping
     public List<Pessoa> getUsers() {
@@ -28,4 +23,9 @@ public class PessoaResource {
         pessoaService.salvar(usuario);
     }
 
+    @GetMapping("/{nome}")
+    public List<Pessoa> getByNome(String nome){return pessoaService.listarPorNome(nome);}
+
+    @GetMapping("/{id}")
+    public Pessoa getByiD(int id){return pessoaService.listarPorId(id);}
 }
